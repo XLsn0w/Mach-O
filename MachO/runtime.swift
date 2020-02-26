@@ -58,6 +58,16 @@ class runtime: UIViewController {
      - key对应OC selector
      - IMP理解为无类型的函数指针
 
+     - method_t
+     - SEL name; //函数名
+     - const char* types; 返回值类型及参数类型
+     - IMP imp; //无返回值的函数体
+
+     -(void)method; == v@:
+     v->void
+     @->id
+     :->SEL
+
      
     
     */
