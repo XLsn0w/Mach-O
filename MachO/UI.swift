@@ -61,13 +61,47 @@ import UIKit
  - 视图混合:减轻视图层级的复杂性,减轻GPU的压力
 
      
+     [UIView setNeedsDisPlay]
+     |
+     [view.layer setNeedsDisplay]
+     |
+     [CALayer display]
+
+     - 如果不响应displayLayer方法,就会进入到系统绘制流程当中
+     - 如果响应displayLayer方法,就开启了异步绘制
+ - 使用layer的代理方法
+ - 如果使用,调用系统的drawlayer方法,进行视图绘制
+ - 如果不使用,调用drawinContext方法
+ - 最终是对CALayer上传位图到GPU
+
      
+     - [layer.delegate displayLayer:]
+     - 代理负责生成对应的位图
+     - 位图作为layer.contents属性的值
+
      
+     - 在主队列调用setNeedsDisplay
+     - 在当前runloop将要结束的时候,调用display方法,代理实现displayLayer函数,调用displayLayer方法
+     - 通过子线程切换,位图绘制
+     - 子线程中三个方法,CGBitmapContextCreate(),创建位图上下文
+     - 通过CoreGraphic API进行位图绘制工作
+     - 通过位图上下文生成图片
+     - 回到主队列当中,提交位图,设置CALayer的content属性
+     - 即完成了CALayer的异步绘制.
+
      
-     
-     
-     
-     
+     离屏渲染何时会触发?
+     - 圆角(与maskToBounds一起使用时)
+     - 图层蒙版
+     - 阴影
+     - 光栅化
+
+ 为什么要避免离屏渲染?
+ - 创建新的渲染缓冲区
+ - 上下文切换
+
+ 增加GPU进行额外的开销,导致CPU和GPU合成大于16.7ms,会造成UI卡顿,掉帧
+
      
      
      

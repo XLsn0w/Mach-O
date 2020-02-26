@@ -11,6 +11,7 @@
 		35B299452403AD4C000D7D69 /* MachOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B299442403AD4C000D7D69 /* MachOUITests.swift */; };
 		35B299532403AD64000D7D69 /* MachO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B299522403AD64000D7D69 /* MachO.swift */; };
 		35DD7F6A24065BA900551E76 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD7F6924065BA900551E76 /* UI.swift */; };
+		35DD7F6C2406BD9700551E76 /* runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD7F6B2406BD9700551E76 /* runtime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		35B299462403AD4C000D7D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35B299522403AD64000D7D69 /* MachO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachO.swift; sourceTree = "<group>"; };
 		35DD7F6924065BA900551E76 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		35DD7F6B2406BD9700551E76 /* runtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runtime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				35B299522403AD64000D7D69 /* MachO.swift */,
 				35DD7F6924065BA900551E76 /* UI.swift */,
+				35DD7F6B2406BD9700551E76 /* runtime.swift */,
 			);
 			path = MachO;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				35B299532403AD64000D7D69 /* MachO.swift in Sources */,
 				35DD7F6A24065BA900551E76 /* UI.swift in Sources */,
+				35DD7F6C2406BD9700551E76 /* runtime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
